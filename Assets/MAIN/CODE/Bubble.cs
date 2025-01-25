@@ -49,6 +49,23 @@ public class Bubble : MonoBehaviour, IPushable
         }
     }
 
+    public void Stop()
+    {
+        targetVelocity = Vector3.zero;
+    }
+
+    public void SetPosition(Vector3 pos)
+    {
+        t.position = new Vector3(pos.x, t.position.y, pos.z);
+    }
+
+    public void Teleport(Transform point)
+    {
+        targetVelocity = Vector3.zero;
+        t.position = point.position + point.forward * 2.5f;
+        AddSpeed(point.forward);
+    }
+
     public void Push(Vector3 dir)
     {
         AddSpeed(dir);
@@ -56,6 +73,15 @@ public class Bubble : MonoBehaviour, IPushable
 
     void AddSpeed(Vector3 vel)
     {
+        vel.y = Mathf.Min(vel.y, 0);
         targetVelocity += vel;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("ground"))
+        {
+            PlayerEvents.onBubbleDeath.Invoke(this);
+        }
     }
 }
