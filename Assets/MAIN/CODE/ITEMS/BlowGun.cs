@@ -2,32 +2,31 @@ using UnityEngine;
 
 public class BlowGun : Item
 {
-    public GameObject arrow;
-
-    public float forwardOffset = 1;
-    public float overlapRadius = 2;
-    public Vector3 boxRange;
+    public GameObject quad;
+    public float overlapRadius = 1;
     public float maxForce = 5;
-    public float forceModifier = 1;
-    public float arrowVisualMultiplier = 5;
-
+    public float windUpSpeed = .2f;
+    public AnimationCurve curve;
     float force = 0;
-    float pressedTime = 0;
+    float percent = 0;
 
     public override void Hold(Transform caster)
     {
-        force += Time.deltaTime;
+        percent += Time.deltaTime * windUpSpeed;
+        force = curve.Evaluate(percent) * maxForce;
         force = Mathf.Min(force, maxForce);
-        arrow.transform.rotation = caster.rotation;
-        arrow.transform.position = caster.position + caster.forward * force * arrowVisualMultiplier;
+        quad.transform.rotation = caster.rotation;
+        quad.transform.position = caster.position;
+        quad.transform.localScale = new Vector3(1, 1, force);
     }
 
     public override void Release(Transform caster)
     {
         force = Mathf.Min(force, maxForce);
-        arrow.transform.position = new Vector3(9999, 9999, 9999);
+        quad.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapBox(caster.position + caster.forward * forwardOffset, boxRange, Quaternion.identity);
+        Collider[] hitColliders = Physics.OverlapCapsule(caster.position, caster.position + (caster.forward * force), overlapRadius);
+
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)
@@ -35,12 +34,13 @@ public class BlowGun : Item
             pushable = hit.GetComponent<IPushable>();
             if(pushable != null)
             {
-                Vector3 direction = (hit.transform.position - caster.position);
+                Vector3 direction = (hit.transform.position - caster.position).normalized;
                 direction.y = 0;
-                pushable.Push(direction * forceModifier * force);
+                pushable.Push(direction * force);
             }
         }
 
         force = 0;
+        percent = 0;
     }
 }
