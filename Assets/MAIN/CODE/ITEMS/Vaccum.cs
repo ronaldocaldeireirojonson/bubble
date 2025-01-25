@@ -2,22 +2,20 @@ using UnityEngine;
 
 public class Vaccum : Item
 {
-    public GameObject arrow;
+    public GameObject quad;
 
-    public float forwardOffset = 1;
-    public float overlapRadius = 2;
-    public float maxForce = 5;
-    public float forceModifier = 1;
+    public float forwardOffset = 5;
     public float arrowVisualMultiplier = 5;
     public float suctionForce = 1;
     public float suctionStopThreashold = 1;
-    public Vector3 boxRange;
 
     public override void Hold(Transform caster)
     {
-        arrow.transform.rotation = caster.rotation;
-        arrow.transform.position = caster.position + caster.forward * 2;
-        Collider[] hitColliders = Physics.OverlapBox(caster.position + caster.forward * forwardOffset, boxRange, Quaternion.identity);
+        quad.transform.rotation = caster.rotation;
+        quad.transform.position = caster.position;
+        quad.transform.localScale = new Vector3(1, 1, forwardOffset);
+        Collider[] hitColliders = Physics.OverlapCapsule(caster.position, caster.position + caster.forward * forwardOffset, 1);
+
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)
@@ -40,9 +38,9 @@ public class Vaccum : Item
 
     public override void Release(Transform caster)
     {
-        arrow.transform.position = new Vector3(9999, 9999, 9999);
+        quad.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
+        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, 1);
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)

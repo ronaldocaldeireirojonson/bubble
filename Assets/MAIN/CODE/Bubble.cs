@@ -41,11 +41,11 @@ public class Bubble : MonoBehaviour, IPushable
         Collider[] hitColliders = Physics.OverlapSphere(t.position, overlapRadius, ground);
         foreach (Collider hit in hitColliders)
         {
-            targetVelocity = Vector3.zero;
             Vector3 hitPoint = hit.ClosestPoint(t.position);
-            Vector3 direction = (hitPoint - t.position);
-            
-            AddSpeed(-direction);    
+            Vector3 direction = Vector3.Cross(targetVelocity, hitPoint);
+            targetVelocity = Vector3.zero;
+            Debug.DrawLine(hitPoint, hitPoint + direction, Color.red);
+            AddSpeed(direction);
         }
     }
 
