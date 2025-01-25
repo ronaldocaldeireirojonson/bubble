@@ -43,6 +43,6 @@ public class InputController : MonoBehaviour
             }
         }
 
-        motor.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        motor.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 }
