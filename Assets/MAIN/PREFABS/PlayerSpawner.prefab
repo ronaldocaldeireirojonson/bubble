@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6275529385206442370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.298656, y: -13.800643, z: 11.121091}
+  m_LocalPosition: {x: -0.73, y: 0, z: -1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 4936856584189944893, guid: 402807d2c0e4b9d4c9b69b1c92427266, type: 3}
+  targetGroup: {fileID: 0}
+  targetBubble: {fileID: 0}

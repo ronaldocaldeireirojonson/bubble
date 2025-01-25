@@ -241,11 +241,12 @@ GameObject:
   - component: {fileID: 6328635662279780458}
   - component: {fileID: 4782907838037769612}
   - component: {fileID: 9100925492903312900}
+  - component: {fileID: 4787477141108901370}
   - component: {fileID: 7206608516019317235}
   - component: {fileID: 1213890797053310350}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,6 +350,20 @@ MonoBehaviour:
   hand:
     emptyHandGraphic: {fileID: 6208892799205293027}
     itemPivot: {fileID: 428670711999004033}
+--- !u!114 &4787477141108901370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936856584189944893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80bf1dfa8f410b540a8b0896a1b7aedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHat: {fileID: 0}
+  hatPivot: {fileID: 0}
 --- !u!135 &7206608516019317235
 SphereCollider:
   m_ObjectHideFlags: 0
