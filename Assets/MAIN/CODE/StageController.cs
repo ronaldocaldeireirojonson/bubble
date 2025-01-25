@@ -28,7 +28,7 @@ public class StageController : MonoBehaviour
     {
         t.GetComponent<InputController>().isStopped = true;
         t.position = respawns[currentRespawn].position;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.23f);
         t.GetComponent<InputController>().isStopped = false;
     }
 

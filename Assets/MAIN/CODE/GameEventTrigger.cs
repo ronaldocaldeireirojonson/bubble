@@ -15,9 +15,6 @@ public class GameEventTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
-        Debug.Log(onPlayerEnterEvent);
-
         if(other.CompareTag("Player"))
             onPlayerEnterEvent.Invoke(other.transform);
 
