@@ -9,17 +9,16 @@ public class BlowGun : Item
     public float maxForce = 5;
     public float forceModifier = 1;
     public float arrowVisualMultiplier = 5;
-    public AnimationCurve forceGatherCurve;
 
     float force = 0;
     float pressedTime = 0;
 
     public override void Hold(Transform caster)
     {
-        pressedTime += Time.deltaTime;
+        force += Time.deltaTime;
         force = Mathf.Min(force, maxForce);
         arrow.transform.rotation = caster.rotation;
-        arrow.transform.position = caster.position + caster.forward * Time.deltaTime * force * arrowVisualMultiplier;
+        arrow.transform.position = caster.position + caster.forward * force * arrowVisualMultiplier;
     }
 
     public override void Release(Transform caster)

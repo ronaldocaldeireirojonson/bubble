@@ -29,13 +29,11 @@ public class GameController : MonoBehaviour
         for(int i = 0; i < puzzles.Length; i++)
         {
             bool solved = true;
-            Debug.Log("INDEX " + index);
 
             for(int j = 0; j < puzzles[i].keys.Length; j++)
             {
                 if(puzzles[i].isSolved) continue;
 
-                Debug.Log("J " + j);
                 if(!keys[puzzles[i].keys[j]].state)
                 {
                     solved = false;

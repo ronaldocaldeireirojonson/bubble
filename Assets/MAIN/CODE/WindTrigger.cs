@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WindZone : MonoBehaviour
+public class WindTrigger : MonoBehaviour
 {
     public float multiplier = .5f;
 
