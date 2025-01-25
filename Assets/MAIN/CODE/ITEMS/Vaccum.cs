@@ -14,8 +14,8 @@ public class Vaccum : Item
 
     public override void Hold(Transform caster)
     {
-        arrow.transform.position = new Vector3(9999, 9999, 9999);
-
+        arrow.transform.rotation = caster.rotation;
+        arrow.transform.position = caster.position + caster.forward * 2;
         Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
         IPushable pushable = null;
 
@@ -39,6 +39,8 @@ public class Vaccum : Item
 
     public override void Release(Transform caster)
     {
+        arrow.transform.position = new Vector3(9999, 9999, 9999);
+
         Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
         IPushable pushable = null;
 
@@ -48,7 +50,7 @@ public class Vaccum : Item
             if(pushable != null)
             {
                 Vector3 direction = (hit.transform.position - caster.position);
-                
+
                 if(direction.magnitude < suctionStopThreashold)
                     pushable.Stop();
             }

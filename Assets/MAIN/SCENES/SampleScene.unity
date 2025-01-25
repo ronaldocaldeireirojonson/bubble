@@ -617,6 +617,10 @@ PrefabInstance:
       propertyPath: arrow
       value: 
       objectReference: {fileID: 1505511786}
+    - target: {fileID: 662160138134274712, guid: 349558044e56d9047b0941742bb112a5, type: 3}
+      propertyPath: arrowVisualMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1504836226778978003, guid: 349558044e56d9047b0941742bb112a5, type: 3}
       propertyPath: m_Name
       value: Fan
@@ -1067,12 +1071,16 @@ PrefabInstance:
       value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
+      propertyPath: forwardOffset
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
       propertyPath: overlapRadius
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
       propertyPath: arrowVisualMultiplier
-      value: 1
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
       propertyPath: suctionStopThreashold
@@ -1314,8 +1322,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 43.362206, z: 1}
+  m_Center: {x: 0, y: -21.181103, z: 0}
 --- !u!4 &330477901
 Transform:
   m_ObjectHideFlags: 0
@@ -1325,7 +1333,7 @@ Transform:
   m_GameObject: {fileID: 330477899}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.4, z: 0}
+  m_LocalPosition: {x: 0, y: -4.2, z: 0}
   m_LocalScale: {x: 146.49, y: 1, z: 108.22518}
   m_ConstrainProportionsScale: 0
   m_Children: []
