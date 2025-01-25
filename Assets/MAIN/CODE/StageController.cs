@@ -11,12 +11,14 @@ public class StageController : MonoBehaviour
     {
         PlayerEvents.onPlayerDeath.AddListener(onPlayerDeath);
         PlayerEvents.onRespawnSet.AddListener(onRespawnSet);
+        PlayerEvents.onBubbleDeath.AddListener(onBubbleRespawn);
     }
 
     void OnDisable()
     {
         PlayerEvents.onPlayerDeath.RemoveListener(onPlayerDeath);
         PlayerEvents.onRespawnSet.RemoveListener(onRespawnSet);
+        PlayerEvents.onBubbleDeath.RemoveListener(onBubbleRespawn);
     }
 
     public void onPlayerDeath(Transform t)
@@ -30,6 +32,18 @@ public class StageController : MonoBehaviour
         t.position = respawns[currentRespawn].position;
         yield return new WaitForSeconds(.23f);
         t.GetComponent<InputController>().isStopped = false;
+    }
+
+    public void onBubbleRespawn(Bubble bubble)
+    {
+        StartCoroutine(handleBubbleDeath(bubble));
+    }
+
+    IEnumerator handleBubbleDeath(Bubble bubble)
+    {
+        bubble.Stop();
+        yield return new WaitForSeconds(.23f);
+        bubble.SetPosition(respawns[currentRespawn].position);
     }
 
     public void onRespawnSet(int newRespawn)

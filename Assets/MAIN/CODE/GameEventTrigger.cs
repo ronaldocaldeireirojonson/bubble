@@ -3,15 +3,21 @@ using UnityEngine.Events;
 using System;
 
 [Serializable]
-public class CustomEvent: UnityEvent<Transform> 
+public class TransformEvent: UnityEvent<Transform> 
+{
+
+}
+
+[Serializable]
+public class BubbleEvent: UnityEvent<Bubble> 
 {
 
 }
 
 public class GameEventTrigger : MonoBehaviour
 {
-    public CustomEvent onPlayerEnterEvent;
-    public UnityEvent onBubbleEnterEvent;
+    public TransformEvent onPlayerEnterEvent;
+    public BubbleEvent onBubbleEnterEvent;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +25,6 @@ public class GameEventTrigger : MonoBehaviour
             onPlayerEnterEvent.Invoke(other.transform);
 
         if(other.CompareTag("bubble"))
-            onBubbleEnterEvent.Invoke();
+            onBubbleEnterEvent.Invoke(other.transform.GetComponent<Bubble>());
     }
 }
