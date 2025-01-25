@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour
 {
+    public bool isStopped = false;
+
     ItemCollector item;
     Motor motor;
     Transform t;
@@ -18,6 +20,8 @@ public class InputController : MonoBehaviour
 
     void Update()
     {
+        if(isStopped) return;
+        
         if(Input.GetAxis("Jump") > 0)
         {
             hand = item.getHand();

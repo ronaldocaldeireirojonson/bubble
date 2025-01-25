@@ -827,7 +827,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 57.9135
+  field of view: 53.89847
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -853,8 +853,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2098162, y: 0.42337346, z: -0.10146694, w: 0.87546366}
-  m_LocalPosition: {x: -6.860743, y: 5.428857, z: -6.241723}
+  m_LocalRotation: {x: 0.33084187, y: 0.40489775, z: -0.15999478, w: 0.8372593}
+  m_LocalPosition: {x: -7.635366, y: 10.642978, z: -6.9077034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1331,22 +1331,16 @@ MonoBehaviour:
       - m_Target: {fileID: 1508291630}
         m_TargetAssemblyTypeName: StageController, Assembly-CSharp
         m_MethodName: onPlayerDeath
-        m_Mode: 2
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   onBubbleEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onPlayerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onBubbleExitEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &573066852
@@ -2724,12 +2718,6 @@ MonoBehaviour:
   onBubbleEnterEvent:
     m_PersistentCalls:
       m_Calls: []
-  onPlayerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  onBubbleExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!135 &1255518181
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3350,9 +3338,9 @@ MonoBehaviour:
   FramingSize: 0.7
   CenterOffset: {x: 0, y: 0}
   Damping: 2
-  SizeAdjustment: 2
+  SizeAdjustment: 0
   LateralAdjustment: 0
-  FovRange: {x: 57.9135, y: 69.72392}
+  FovRange: {x: 53.89847, y: 75.07731}
   DollyRange: {x: -100, y: 100}
   OrthoSizeRange: {x: 1, y: 1000}
 --- !u!114 &1662941393
@@ -3402,7 +3390,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: -8.37, y: 5.43, z: -6.63}
+  FollowOffset: {x: -8.37, y: 10, z: -6.63}
 --- !u!114 &1662941395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3454,8 +3442,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662941391}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20981622, y: 0.42337346, z: -0.10146693, w: 0.87546366}
-  m_LocalPosition: {x: -7.667126, y: 6.0200067, z: -6.947502}
+  m_LocalRotation: {x: 0.33084184, y: 0.40489772, z: -0.15999475, w: 0.8372594}
+  m_LocalPosition: {x: -7.667126, y: 10.590007, z: -6.947502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3552,6 +3540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca0609034ff02146bdf8eefd3804cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStopped: 0
 --- !u!1 &1772847140
 GameObject:
   m_ObjectHideFlags: 0
