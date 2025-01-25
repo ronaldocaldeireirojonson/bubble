@@ -6,6 +6,7 @@ public class BlowGun : Item
 
     public float forwardOffset = 1;
     public float overlapRadius = 2;
+    public Vector3 boxRange;
     public float maxForce = 5;
     public float forceModifier = 1;
     public float arrowVisualMultiplier = 5;
@@ -26,7 +27,7 @@ public class BlowGun : Item
         force = Mathf.Min(force, maxForce);
         arrow.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
+        Collider[] hitColliders = Physics.OverlapBox(caster.position + caster.forward * forwardOffset, boxRange, Quaternion.identity);
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)

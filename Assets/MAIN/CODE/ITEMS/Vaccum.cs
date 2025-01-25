@@ -11,12 +11,13 @@ public class Vaccum : Item
     public float arrowVisualMultiplier = 5;
     public float suctionForce = 1;
     public float suctionStopThreashold = 1;
+    public Vector3 boxRange;
 
     public override void Hold(Transform caster)
     {
         arrow.transform.rotation = caster.rotation;
         arrow.transform.position = caster.position + caster.forward * 2;
-        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
+        Collider[] hitColliders = Physics.OverlapBox(caster.position + caster.forward * forwardOffset, boxRange, Quaternion.identity);
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)

@@ -618,6 +618,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1505511786}
     - target: {fileID: 662160138134274712, guid: 349558044e56d9047b0941742bb112a5, type: 3}
+      propertyPath: boxRange.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 662160138134274712, guid: 349558044e56d9047b0941742bb112a5, type: 3}
+      propertyPath: boxRange.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 662160138134274712, guid: 349558044e56d9047b0941742bb112a5, type: 3}
+      propertyPath: boxRange.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 662160138134274712, guid: 349558044e56d9047b0941742bb112a5, type: 3}
       propertyPath: arrowVisualMultiplier
       value: 1
       objectReference: {fileID: 0}
@@ -1066,6 +1078,18 @@ PrefabInstance:
       propertyPath: arrow
       value: 
       objectReference: {fileID: 1505511786}
+    - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
+      propertyPath: boxRange.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
+      propertyPath: boxRange.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
+      propertyPath: boxRange.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2213946195887103989, guid: 3a71b473e311dc244ab010a9cf88d647, type: 3}
       propertyPath: suctionForce
       value: 0.18
