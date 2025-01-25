@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BlowGun : Item
 {
-    public GameObject quad;
+    public GameObject quadPrefab;
     public float overlapRadius = 1;
     public float maxForce = 5;
     public float windUpSpeed = .2f;
@@ -10,11 +10,19 @@ public class BlowGun : Item
     float force = 0;
     float percent = 0;
 
+    GameObject quad;
+
+    public override void Setup()
+    {
+        quad = Object.Instantiate(quadPrefab);
+    }
+
     public override void Hold(Transform caster)
     {
         percent += Time.deltaTime * windUpSpeed;
         force = curve.Evaluate(percent) * maxForce;
         force = Mathf.Min(force, maxForce);
+
         quad.transform.rotation = caster.rotation;
         quad.transform.position = caster.position;
         quad.transform.localScale = new Vector3(1, 1, force);

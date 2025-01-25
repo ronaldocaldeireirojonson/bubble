@@ -27,11 +27,16 @@ public class Hand
             return;
         }
 
-        item = newItem;
-        currentItem = UnityEngine.Object.Instantiate(newItem.prefab, itemPivot);
+        if(item != newItem)
+        {
+            Debug.Log("NEW ITEM");
+            item = newItem;
+            currentItem = UnityEngine.Object.Instantiate(newItem.prefab, itemPivot);
+            Debug.Log(currentItem.transform.name);
+        }
 
         if(emptyHandGraphic != null)
-        emptyHandGraphic.SetActive(false);
+            emptyHandGraphic.SetActive(false);
     }
 
     public void Hold(Transform caster)

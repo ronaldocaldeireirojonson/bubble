@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class Vaccum : Item
 {
-    public GameObject quad;
+    public GameObject quadPrefab;
 
     public float forwardOffset = 5;
     public float arrowVisualMultiplier = 5;
     public float suctionForce = 1;
     public float suctionStopThreashold = 1;
+
+    GameObject quad;
+
+    public override void Setup()
+    {
+        quad = Object.Instantiate(quadPrefab);
+    }
 
     public override void Hold(Transform caster)
     {

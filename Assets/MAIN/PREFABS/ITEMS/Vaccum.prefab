@@ -69,13 +69,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 6842195856364916039, guid: d05d4b208650edb4ab9ff5cd566a96c4, type: 3}
-  arrow: {fileID: 0}
+  quadPrefab: {fileID: 6930259794033672363, guid: 5f0e549935ff3804ebc4b394b6b4acd8, type: 3}
   forwardOffset: 1
-  overlapRadius: 2
-  maxForce: 5
-  forceModifier: 1
   arrowVisualMultiplier: 5
   suctionForce: 1
+  suctionStopThreashold: 1
 --- !u!1 &5580256367704031400
 GameObject:
   m_ObjectHideFlags: 0
