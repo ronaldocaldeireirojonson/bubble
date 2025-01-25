@@ -72,6 +72,9 @@ public class PlayerSpawner : MonoBehaviour
 			players[from].ButtonInput(data["action"].ToString());
 		}*/
 
+		if (data["element"] == null || data["data"] == null)
+			return;
+
 		string element = (string)data["element"];
 		string key = (string)data["data"]["key"];
 		bool pressed = (bool)data["data"]["pressed"];
