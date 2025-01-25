@@ -23,6 +23,26 @@ public class PlayerSpawner : MonoBehaviour
 		AirConsole.instance.onConnect += OnConnect;
 	}
 
+    private void Start()
+    {
+		PrepareTargetGroup();
+
+	}
+
+    void PrepareTargetGroup()
+    {
+        for (int i = targetGroup.Targets.Count-1; i >=0 ; i--)
+        {
+            CinemachineTargetGroup.Target item = targetGroup.Targets[i];
+
+			if(item != null)
+	            targetGroup.RemoveMember(item.Object);
+		}
+
+		targetGroup.AddMember(targetBubble, radious, width);
+
+	}
+
 	void OnReady(string code)
 	{
 		//Since people might be coming to the game from the AirConsole store once the game is live, 
