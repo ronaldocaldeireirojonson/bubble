@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class StageController : MonoBehaviour
 {
@@ -20,8 +21,15 @@ public class StageController : MonoBehaviour
 
     public void onPlayerDeath(Transform t)
     {
-        Debug.Log(t.name);
+        StartCoroutine(handlePlayerDeath(t));
+    }
+
+    IEnumerator handlePlayerDeath(Transform t)
+    {
+        t.GetComponent<InputController>().isStopped = true;
         t.position = respawns[currentRespawn].position;
+        yield return new WaitForSeconds(.23f);
+        t.GetComponent<InputController>().isStopped = false;
     }
 
     public void onRespawnSet(int newRespawn)
