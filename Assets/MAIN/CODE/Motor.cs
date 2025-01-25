@@ -30,9 +30,9 @@ public class Motor
             float angle = Mathf.SmoothDampAngle(t.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             t.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            // Calculate movement direction
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+
+            controller.Move((moveDirection.normalized + (Vector3.up * gravity)) * speed * Time.deltaTime);
         }
     }
 }

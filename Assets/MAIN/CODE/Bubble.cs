@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bubble : MonoBehaviour
+public class Bubble : MonoBehaviour, IPushable
 {   
     public Vector3 targetVelocity;
     public float amplitude = .2f;
@@ -41,11 +41,17 @@ public class Bubble : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(t.position, overlapRadius, ground);
         foreach (Collider hit in hitColliders)
         {
-            Debug.Log(hit.transform.name);
+            targetVelocity = Vector3.zero;
             Vector3 hitPoint = hit.ClosestPoint(t.position);
-            Vector3 direction = (hitPoint - t.position).normalized;
-            AddSpeed(-direction * 5);    
+            Vector3 direction = (hitPoint - t.position);
+            
+            AddSpeed(-direction);    
         }
+    }
+
+    public void Push(Vector3 dir)
+    {
+        AddSpeed(dir);
     }
 
     void AddSpeed(Vector3 vel)
