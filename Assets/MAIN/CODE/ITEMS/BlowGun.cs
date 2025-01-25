@@ -4,18 +4,15 @@ public class BlowGun : Item
 {
     public GameObject arrow;
 
-    public Vector3 pointA;
-    public Vector3 pointB;
-    public Material planeMaterial;
-
     public float forwardOffset = 1;
     public float overlapRadius = 2;
+    public Vector3 boxRange;
     public float maxForce = 5;
     public float forceModifier = 1;
     public float arrowVisualMultiplier = 5;
 
-    GameObject plane;
     float force = 0;
+    float pressedTime = 0;
 
     public override void Hold(Transform caster)
     {
@@ -30,7 +27,7 @@ public class BlowGun : Item
         force = Mathf.Min(force, maxForce);
         arrow.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
+        Collider[] hitColliders = Physics.OverlapBox(caster.position + caster.forward * forwardOffset, boxRange, Quaternion.identity);
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)
@@ -45,24 +42,5 @@ public class BlowGun : Item
         }
 
         force = 0;
-    }
-
-    void DrawPlane(Vector3 a, Vector3 b)
-    {
-        Vector3 center = (a + b) / 2f;
-        Vector3 direction = b - a;
-
-        if(plane == null)
-            plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
-
-        plane.transform.position = center;
-
-        float distance = direction.magnitude;
-        plane.transform.localScale = new Vector3(distance / 10f, 1f, 0.1f);
-
-        if (planeMaterial != null)
-        {
-            plane.GetComponent<Renderer>().material = planeMaterial;
-        }
     }
 }
