@@ -6997,7 +6997,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5925053848549035657, guid: 61730d3013071c7489b6abca412ee33d, type: 3}
       propertyPath: usingAirConsole
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5925053848549035657, guid: 61730d3013071c7489b6abca412ee33d, type: 3}
       propertyPath: otherObjects.Array.size
