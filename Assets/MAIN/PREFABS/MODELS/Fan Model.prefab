@@ -50,27 +50,45 @@ MonoBehaviour:
   quad: {fileID: 0}
   overlapRadius: 1
   maxForce: 5
-  windUpSpeed: 0.75
+  windUpSpeed: 0.7
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
       inSlope: 2
       outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.032811627
+      value: 0.0992617
+      inSlope: 0.30216056
+      outSlope: 0.30216056
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.10977128
+    - serializedVersion: 3
+      time: 0.47135568
+      value: 0.49791908
+      inSlope: 1.4121886
+      outSlope: 1.4121886
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.09440433
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.032545395
+      outSlope: 0.032545395
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3925595
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
