@@ -8,7 +8,7 @@ public class MainMenuManager : MonoBehaviour
     public GameObject[] Buttons;
     public GameObject[] nextButtons;
     List<Animator> ButtonsAnimators;
-    private int index = 0;
+    [SerializeField] private int index = 0;
 
     private void Start()
     {
@@ -86,5 +86,10 @@ public class MainMenuManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Game is exiting...");
+    }
+
+    public void ConfirmButton()
+    {
+        Buttons[index].GetComponent<MainMenuButton>().OnSelected.Invoke();
     }
 }

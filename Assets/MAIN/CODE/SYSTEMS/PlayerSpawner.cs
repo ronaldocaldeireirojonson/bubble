@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NDream.AirConsole;
 using Newtonsoft.Json.Linq;
 using Unity.Cinemachine;
+using System;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -30,10 +31,31 @@ public class PlayerSpawner : MonoBehaviour
 		AirConsole.instance.onConnect += OnConnect;
 	}
 
+    private void OnDestroy()
+    {
+		AirConsole.instance.onMessage -= OnMessage;
+		AirConsole.instance.onReady -= OnReady;
+		AirConsole.instance.onConnect -= OnConnect;
+	}
+
     private void Start()
     {
 		PrepareTargetGroup();
+		SpawnConnectedPlayers();
+	}
 
+    private void SpawnConnectedPlayers()
+    {
+		Debug.LogError("SpawnConnectedPlayers");
+		//Since people might be coming to the game from the AirConsole store once the game is live, 
+		//I have to check for already connected devices here and cannot rely only on the OnConnect event 
+		List<int> connectedDevices = AirConsole.instance.GetControllerDeviceIds();
+		foreach (int deviceID in connectedDevices)
+		{
+
+			Debug.LogError("SpawnConnectedPlayers " + deviceID);
+			AddNewPlayer(deviceID);
+		}
 	}
 
     void PrepareTargetGroup()
@@ -52,13 +74,8 @@ public class PlayerSpawner : MonoBehaviour
 
 	void OnReady(string code)
 	{
-		//Since people might be coming to the game from the AirConsole store once the game is live, 
-		//I have to check for already connected devices here and cannot rely only on the OnConnect event 
-		List<int> connectedDevices = AirConsole.instance.GetControllerDeviceIds();
-		foreach (int deviceID in connectedDevices)
-		{
-			AddNewPlayer(deviceID);
-		}
+
+		SpawnConnectedPlayers();
 	}
 
 	[ContextMenu("TestSpawn")]
