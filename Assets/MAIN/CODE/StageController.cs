@@ -28,10 +28,10 @@ public class StageController : MonoBehaviour
 
     IEnumerator handlePlayerDeath(Transform t)
     {
-        t.GetComponent<InputController>().isStopped = true;
+        t.GetComponent<IInput>().SetStop(true);
         t.position = respawns[currentRespawn].position;
         yield return new WaitForSeconds(.23f);
-        t.GetComponent<InputController>().isStopped = false;
+        t.GetComponent<IInput>().SetStop(false);
     }
 
     public void onBubbleRespawn(Bubble bubble)
