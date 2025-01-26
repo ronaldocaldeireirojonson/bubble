@@ -33,19 +33,13 @@ public class MainMenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && index < Buttons.Length - 1)
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            print("RightArrow");
-            ButtonsAnimators[index].Play("HideToLeft");
-            ButtonsAnimators[index + 1].Play("ShowFromRight");
-            index++;
+            MoveToRight();
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && index > 0)
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            print("LeftArrow");
-            ButtonsAnimators[index].Play("HideToRight");
-            ButtonsAnimators[index - 1].Play("ShowFromLeft");
-            index--;
+            MoveToLeft();
         }
         else if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -53,6 +47,24 @@ public class MainMenuManager : MonoBehaviour
             Buttons[index].GetComponent<MainMenuButton>().Select();
         }
     }
+
+    public void MoveToLeft()
+{
+if(index > 0){
+	ButtonsAnimators[index].Play("HideToRight");
+            ButtonsAnimators[index - 1].Play("ShowFromLeft");
+            index--;
+}
+}
+
+public void MoveToRight()
+{
+if(index < Buttons.Length - 1){
+	ButtonsAnimators[index].Play("HideToLeft");
+            ButtonsAnimators[index + 1].Play("ShowFromRight");
+            index++;
+}
+}
 
     public void OpenLevel(string LevelName)
     {
