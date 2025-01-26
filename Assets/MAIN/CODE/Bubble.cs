@@ -26,14 +26,18 @@ public class Bubble : MonoBehaviour, IPushable
     {
         CheckCollision();
 
-        Vector3 moveDir = targetVelocity * Time.deltaTime * deceleration;
-        targetVelocity -= moveDir * Time.deltaTime;
+        //Decelaration
+        targetVelocity = Mathf.Max(targetVelocity.magnitude - deceleration * Time.deltaTime, 0.0f) * targetVelocity.normalized;
+
+
+        //Vector3 moveDir = targetVelocity * Time.deltaTime * deceleration;
+        //targetVelocity -= moveDir * Time.deltaTime;
 
         targetVelocity.x = Mathf.Clamp(targetVelocity.x, -maxVelocity, maxVelocity);
         targetVelocity.y = Mathf.Clamp(targetVelocity.y, -maxVelocity, maxVelocity);
         targetVelocity.z = Mathf.Clamp(targetVelocity.z, -maxVelocity, maxVelocity);
 
-        rb.MovePosition(t.position + targetVelocity - Vector3.up * Time.deltaTime * speed);
+        rb.MovePosition(t.position + (targetVelocity - Vector3.up) * Time.deltaTime);
     }
 
     void CheckCollision()
@@ -43,6 +47,7 @@ public class Bubble : MonoBehaviour, IPushable
         {
             Vector3 hitPoint = hit.ClosestPoint(t.position);
             Vector3 direction = Vector3.Cross(targetVelocity, hitPoint);
+            direction = Vector3.Reflect(targetVelocity, (t.position - hitPoint).normalized); //Get Normal and reflects the velocity vector
             targetVelocity = Vector3.zero;
             AddSpeed(direction);
         }
