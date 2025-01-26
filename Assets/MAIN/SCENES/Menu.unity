@@ -4630,7 +4630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8156453013952688518, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: SampleScene
+      value: ANIMATIC
       objectReference: {fileID: 0}
     - target: {fileID: 8156453013952688518, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: OnSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
