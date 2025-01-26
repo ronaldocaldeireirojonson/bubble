@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class InputController : MonoBehaviour
+public class InputController : MonoBehaviour, IInput
 {
     public bool isStopped = false;
 
@@ -11,6 +11,11 @@ public class InputController : MonoBehaviour
     Animator anim;
 
     bool isPressingUse = false;
+
+    public void SetStop(bool b)
+    {
+        isStopped = b;
+    }
 
     void Awake()
     {

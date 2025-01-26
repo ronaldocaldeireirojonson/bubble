@@ -6978,6 +6978,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 431707265}
     - target: {fileID: 4128908850311735147, guid: 32ed98db30681884b867865834a6ac99, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 8903782552093465491, guid: fc3071dbf62a30247af617da3a0ef676, type: 3}
+    - target: {fileID: 4128908850311735147, guid: 32ed98db30681884b867865834a6ac99, type: 3}
       propertyPath: targetBubble
       value: 
       objectReference: {fileID: 1668121614}
