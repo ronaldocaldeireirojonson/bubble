@@ -32,7 +32,10 @@ public class InputController : MonoBehaviour
             if(hand != null)
             {
                 hand.Hold(t);
-                anim.SetBool("suck", true);
+                
+                if(anim != null)
+                    anim.SetBool("suck", true);
+                    
                 isPressingUse = true;
             }
         } else
@@ -42,14 +45,19 @@ public class InputController : MonoBehaviour
                 if(isPressingUse)
                 {
                     hand.Release(t);
-                    anim.SetBool("suck", false);
+
+                    if(anim != null)
+                        anim.SetBool("suck", false);
                     isPressingUse = false;
                 }
             }
         }
 
         Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0 ,Input.GetAxisRaw("Vertical"));
-        anim.SetFloat("Forward", input.magnitude);
+
+        if(anim != null)
+            anim.SetFloat("Forward", input.magnitude);
+
         motor.Move(input.x, input.z);
     }
 }
