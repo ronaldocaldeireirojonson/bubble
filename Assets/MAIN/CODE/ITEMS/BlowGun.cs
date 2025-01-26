@@ -40,6 +40,7 @@ public class BlowGun : Item
             if(pushable != null)
             {
                 Vector3 direction = (hit.transform.position - caster.position).normalized;
+                
                 direction.y = 0;
                 pushable.Push(direction * force);
             }
