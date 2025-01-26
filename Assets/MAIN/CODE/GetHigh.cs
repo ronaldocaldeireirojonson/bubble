@@ -25,6 +25,8 @@ public class GetHigh : MonoBehaviour
         {
             if (fisheye != null)
                 fisheye.intensity.value = targetDistorition;  
+
+            other.GetComponentInChildren<Animator>().SetBool("smoke", true);
         }
     }
 
@@ -34,6 +36,8 @@ public class GetHigh : MonoBehaviour
         {
             if (fisheye != null)
                 fisheye.intensity.value = defaultDistortion;   
+
+            other.GetComponentInChildren<Animator>().SetBool("smoke", false);
         }
     }
 }
