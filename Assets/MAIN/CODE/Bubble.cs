@@ -33,7 +33,7 @@ public class Bubble : MonoBehaviour, IPushable
         targetVelocity.y = Mathf.Clamp(targetVelocity.y, -maxVelocity, maxVelocity);
         targetVelocity.z = Mathf.Clamp(targetVelocity.z, -maxVelocity, maxVelocity);
 
-        rb.MovePosition(t.position + targetVelocity * Time.deltaTime * speed);
+        rb.MovePosition(t.position + targetVelocity - Vector3.up * Time.deltaTime * speed);
     }
 
     void CheckCollision()
