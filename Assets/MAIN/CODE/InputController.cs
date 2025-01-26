@@ -8,12 +8,14 @@ public class InputController : MonoBehaviour
     Motor motor;
     Transform t;
     Hand hand;
+    Animator anim;
 
     bool isPressingUse = false;
 
     void Awake()
     {
         motor = new Motor(transform.GetComponent<CharacterController>(), transform);
+        anim = GetComponentInChildren<Animator>();
         t = transform;
         item = GetComponent<ItemCollector>();
     }
@@ -25,10 +27,15 @@ public class InputController : MonoBehaviour
         if(Input.GetAxis("Jump") > 0)
         {
             hand = item.getHand();
+            hand.anim = anim;
 
             if(hand != null)
             {
                 hand.Hold(t);
+                
+                if(anim != null)
+                    anim.SetBool("suck", true);
+                    
                 isPressingUse = true;
             }
         } else
@@ -38,11 +45,19 @@ public class InputController : MonoBehaviour
                 if(isPressingUse)
                 {
                     hand.Release(t);
+
+                    if(anim != null)
+                        anim.SetBool("suck", false);
                     isPressingUse = false;
                 }
             }
         }
 
-        motor.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0 ,Input.GetAxisRaw("Vertical"));
+
+        if(anim != null)
+            anim.SetFloat("Forward", input.magnitude);
+
+        motor.Move(input.x, input.z);
     }
 }

@@ -17,7 +17,7 @@ public class ItemCollector : MonoBehaviour
             Collectable co = other.GetComponent<Collectable>();
             if(co != null)
             {
-                GameObject go = UnityEngine.Object.Instantiate(other.GetComponent<Collectable>().prefab);
+                GameObject go = Instantiate(other.GetComponent<Collectable>().prefab);
                 go.transform.position = Vector3.zero;
                 hand.HoldItem(go.GetComponent<Item>());
             }

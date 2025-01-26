@@ -4,7 +4,7 @@ using System;
 [Serializable]
 public class Hand
 {
-    public GameObject emptyHandGraphic;
+    public Animator anim;
     public Transform itemPivot;
     
     [SerializeField]
@@ -24,12 +24,11 @@ public class Hand
 
         if(newItem == null)
         {
-            if(emptyHandGraphic != null)
-                emptyHandGraphic.SetActive(true);
-            
             newItem = null;
             return;
         }
+
+        Debug.Log(newItem.transform.name);
 
         item = newItem;
         item.transform.SetParent(itemPivot);
@@ -41,9 +40,6 @@ public class Hand
         }
 
         item.quad = quad;
-
-        if(emptyHandGraphic != null)
-            emptyHandGraphic.SetActive(false);
     }
 
     public void Hold(Transform caster)
@@ -53,6 +49,9 @@ public class Hand
             
             return;
         }
+
+        if(anim != null)
+            anim.SetBool(item.animKey, true);
 
         item.Hold(caster);
     }
@@ -64,6 +63,9 @@ public class Hand
             
             return;
         }
+
+        if(anim != null)
+            anim.SetBool(item.animKey, false);
 
         item.Release(caster);
     }
