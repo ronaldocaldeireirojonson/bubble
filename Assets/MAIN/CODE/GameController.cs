@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using System;
 
@@ -51,4 +52,8 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void EndGame()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
