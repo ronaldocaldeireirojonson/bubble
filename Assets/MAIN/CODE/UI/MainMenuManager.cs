@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject[] Buttons;
+    public GameObject[] nextButtons;
     List<Animator> ButtonsAnimators;
     private int index = 0;
 
@@ -16,6 +17,8 @@ public class MainMenuManager : MonoBehaviour
         {
             ButtonsAnimators.Add(b.GetComponent<Animator>());
         }
+
+        ToggleNextButtons();
 
         for(int i = 0; i < ButtonsAnimators.Count; i++)
         {
@@ -29,6 +32,12 @@ public class MainMenuManager : MonoBehaviour
             }
         }
         
+    }
+
+    void ToggleNextButtons()
+    {
+        nextButtons[0].SetActive(index == 0);
+        nextButtons[1].SetActive(index == 1);
     }
 
     void Update()
@@ -49,22 +58,24 @@ public class MainMenuManager : MonoBehaviour
     }
 
     public void MoveToLeft()
-{
-if(index > 0){
-	ButtonsAnimators[index].Play("HideToRight");
+    {
+        if(index > 0){
+            ButtonsAnimators[index].Play("HideToRight");
             ButtonsAnimators[index - 1].Play("ShowFromLeft");
             index--;
-}
-}
+            ToggleNextButtons();
+        }
+    }
 
-public void MoveToRight()
-{
-if(index < Buttons.Length - 1){
-	ButtonsAnimators[index].Play("HideToLeft");
+    public void MoveToRight()
+    {
+        if(index < Buttons.Length - 1){
+            ButtonsAnimators[index].Play("HideToLeft");
             ButtonsAnimators[index + 1].Play("ShowFromRight");
             index++;
-}
-}
+            ToggleNextButtons();
+        }
+    }
 
     public void OpenLevel(string LevelName)
     {

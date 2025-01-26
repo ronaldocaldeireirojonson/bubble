@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-22010204631353623
+--- !u!114 &-4949838453655548940
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_SG_HoloLight
-  m_Shader: {fileID: -6465566751694194690, guid: 69df9d599e7ad5c4ab67e154610565f0, type: 3}
+  m_Name: M_WindMarker_Blow
+  m_Shader: {fileID: -6465566751694194690, guid: 36bc71f6564b5374387c09a9e4e33ad9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -51,19 +51,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 1
-    - _GradientPosition: 0
-    - _Hardnes: 0
-    - _LightIntensity: 50
-    - _NoiseScale: 10
+    - _Offset: 13.13
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.25
-    - _opacity: 0.065
+    - _Speed: -1
+    - _Time: -1
+    - _YStrecth: 2
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
-    - _LightColor: {r: 0, g: 0.57617044, b: 1, a: 1}
-    - _LightColor_A: {r: 1, g: 0, b: 0.4828682, a: 1}
-    - _LightColor_B: {r: 0.9056604, g: 0.31185475, b: 0.71019864, a: 1}
+    - _MainColor: {r: 0.79549754, g: 1, b: 0.4292453, a: 0}
+    - _SecondaryColor: {r: 0.4489059, g: 0.8117647, b: 0.63638294, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
