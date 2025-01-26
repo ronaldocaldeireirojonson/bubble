@@ -23,6 +23,18 @@ public class GameController : MonoBehaviour
     public Puzzle[] puzzles;
     public PuzzleKey[] keys;
 
+    void Awake()
+    {
+        UnityEngine.Object[] allObjects = Resources.FindObjectsOfTypeAll<UnityEngine.Object>();
+        foreach (UnityEngine.Object obj in allObjects)
+        {
+            if ((obj.hideFlags & HideFlags.DontSave) != 0)
+            {
+                Debug.Log($"DontSave Asset: {obj.name}, Type: {obj.GetType()}");
+            }
+        }
+    }
+
     public void SolveKey(int index)
     {
         keys[index].state = true;

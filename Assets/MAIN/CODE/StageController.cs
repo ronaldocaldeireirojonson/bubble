@@ -4,11 +4,13 @@ using System.Collections;
 public class StageController : MonoBehaviour
 {
     public Transform[] respawns;
+    public AudioSource source;
 
     int currentRespawn = 0;
 
     void OnEnable()
     {
+        source = GetComponent<AudioSource>();
         PlayerEvents.onPlayerDeath.AddListener(onPlayerDeath);
         PlayerEvents.onRespawnSet.AddListener(onRespawnSet);
         PlayerEvents.onBubbleDeath.AddListener(onBubbleRespawn);
@@ -19,6 +21,11 @@ public class StageController : MonoBehaviour
         PlayerEvents.onPlayerDeath.RemoveListener(onPlayerDeath);
         PlayerEvents.onRespawnSet.RemoveListener(onRespawnSet);
         PlayerEvents.onBubbleDeath.RemoveListener(onBubbleRespawn);
+    }
+
+    public void PlayAudio(AudioClip clip)
+    {
+        source.PlayOneShot(clip);
     }
 
     public void onPlayerDeath(Transform t)
