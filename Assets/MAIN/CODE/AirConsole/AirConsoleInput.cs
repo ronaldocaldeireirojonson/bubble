@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AirConsoleInput : MonoBehaviour
+public class AirConsoleInput : MonoBehaviour, IInput
 {
     public bool isStopped = false;
 
@@ -8,6 +8,7 @@ public class AirConsoleInput : MonoBehaviour
     Motor motor;
     Transform t;
     Hand hand;
+    Animator anim;
 
     bool isPressing = false;
 
@@ -25,9 +26,12 @@ public class AirConsoleInput : MonoBehaviour
 
     //private bool isInSphere;
 
+    Vector2 magnitude = Vector2.zero;
+
     void Awake()
     {
         motor = new Motor(transform.GetComponent<CharacterController>(), transform);
+        anim = GetComponentInChildren<Animator>();
         t = transform;
         item = GetComponent<ItemCollector>();
     }
@@ -35,8 +39,18 @@ public class AirConsoleInput : MonoBehaviour
     void Update()
     {
         hand = item.getHand();
+        hand.anim = anim;
 
-        if (isPressing) hand?.Hold(t);
+        if (isPressing)
+        {
+            hand?.Hold(t);
+            anim?.SetBool("suck", true);
+        }
+
+        magnitude.x = horizontal;
+        magnitude.y = vertical;
+
+        anim.SetFloat("Forward", magnitude.magnitude);
 
         motor.Move(horizontal, vertical);
     }
@@ -79,6 +93,7 @@ public class AirConsoleInput : MonoBehaviour
             case "interact-up":
                 isPressing = false;
                 hand.Release(t);
+                anim.SetBool("suck", false);
                 break;
         }
     }
@@ -111,8 +126,14 @@ public class AirConsoleInput : MonoBehaviour
                 {
                     isPressing = false;
                     hand?.Release(t);
+                    anim.SetBool("suck", false);
                 }
                 break;
         }
+    }
+
+    public void SetStop(bool b)
+    {
+        isStopped = b;
     }
 }
