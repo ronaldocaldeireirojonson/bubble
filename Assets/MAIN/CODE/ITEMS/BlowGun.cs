@@ -23,6 +23,7 @@ public class BlowGun : Item
         quad.transform.rotation = caster.rotation;
         quad.transform.position = caster.position;
         quad.transform.localScale = new Vector3(1, 1, force);
+        quad.transform.GetChild(0).transform.localScale = new Vector3(1, 1, force);
     }
 
     public override void Release(Transform caster)

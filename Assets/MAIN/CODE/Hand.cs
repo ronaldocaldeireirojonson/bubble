@@ -16,13 +16,16 @@ public class Hand
 
     public void HoldItem(Item newItem)
     {
-        if(item != null)
+        if (item != null)
         {
             UnityEngine.Object.Destroy(item.gameObject);
+            UnityEngine.Object.Destroy(quad.gameObject);
             item = null;
         }
 
-        if(newItem == null)
+        quad = UnityEngine.Object.Instantiate(newItem.quadPrefab);
+
+        if (newItem == null)
         {
             newItem = null;
             return;
@@ -30,14 +33,13 @@ public class Hand
 
         Debug.Log(newItem.transform.name);
 
+        
+
         item = newItem;
         item.transform.SetParent(itemPivot);
         item.transform.localPosition = Vector3.zero;
         item.transform.rotation = Quaternion.identity;
 
-        if(quad == null){
-            quad = UnityEngine.Object.Instantiate(item.quadPrefab);
-        }
 
         item.quad = quad;
     }

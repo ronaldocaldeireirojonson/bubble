@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdccb485b1a6678479788fea4fa57d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quadPrefab: {fileID: 6930259794033672363, guid: 5f0e549935ff3804ebc4b394b6b4acd8, type: 3}
+  quadPrefab: {fileID: 6930259794033672363, guid: d08812767b1db0a4090be2f05684ae26, type: 3}
   quad: {fileID: 0}
   animKey: suck
   forwardOffset: 8
