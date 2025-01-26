@@ -378,10 +378,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   switchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: 
-  sourceBankPath: 
+  sourceBankPath: Assets/StreamingAssets/FMOD/Desktop
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -402,7 +402,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -416,21 +417,21 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131622
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131622
   Platforms:
-  - {fileID: -4589652805505300908}
-  - {fileID: -7095874123864481014}
-  - {fileID: 363062229825198489}
   - {fileID: -7210816907159401579}
-  - {fileID: -4958931376666382355}
-  - {fileID: 1506817930644921893}
+  - {fileID: -7095874123864481014}
   - {fileID: -5197462382913609954}
-  - {fileID: 2006906734172416120}
+  - {fileID: -4958931376666382355}
+  - {fileID: -4589652805505300908}
+  - {fileID: 363062229825198489}
+  - {fileID: 1506817930644921893}
   - {fileID: 1561025574661371706}
   - {fileID: 1634667496724538600}
-  - {fileID: 5719820061648053966}
+  - {fileID: 2006906734172416120}
   - {fileID: 3857322122636098248}
+  - {fileID: 5719820061648053966}
   MigratedPlatforms: 0500000000000000060000000a0000000800000009000000120000000c000000150000000b0000000200000001000000
 --- !u!114 &363062229825198489
 MonoBehaviour:
@@ -592,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   identifier: 46fbfdf3fc43db0458918377fd40293e
   parentIdentifier: default
-  active: 0
+  active: 1
   Properties:
     LiveUpdate:
       Value: 0
@@ -642,7 +643,7 @@ MonoBehaviour:
     CallbackHandler:
       Value: {fileID: 0}
       HasValue: 0
-  OutputTypeName: 
+  OutputTypeName: AUTODETECT
   threadAffinities:
     Value: []
     HasValue: 0
@@ -911,8 +912,8 @@ MonoBehaviour:
       Value: 
       HasValue: 0
     SpeakerMode:
-      Value: 0
-      HasValue: 0
+      Value: 3
+      HasValue: 1
     VirtualChannelCount:
       Value: 0
       HasValue: 0
@@ -940,16 +941,16 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - fd7c55dab0fce234b8c25f6ffca523c1
-  - de700ef3f37a49b58a57ae3addf01ad9
-  - c88d16e5272a4e241b0ef0ac2e53b73d
   - b7716510a1f36934c87976f3a81dbf3d
-  - 2c5177b11d81d824dbb064f9ac8527da
-  - 52eb9df5db46521439908db3a29a1bbb
+  - de700ef3f37a49b58a57ae3addf01ad9
   - e7a046c753c3c3d4aacc91f6597f310d
+  - 2c5177b11d81d824dbb064f9ac8527da
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - 52eb9df5db46521439908db3a29a1bbb
+  - 0f8eb3f400726694eb47beb1a9f94ce8
   - 2fea114e74ecf3c4f920e1d5cc1c4c40
   - 46fbfdf3fc43db0458918377fd40293e
-  - 0f8eb3f400726694eb47beb1a9f94ce8
   codecChannels:
     Value: []
     HasValue: 0
