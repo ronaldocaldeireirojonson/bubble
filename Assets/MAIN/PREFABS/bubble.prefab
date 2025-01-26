@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4729205730170521335}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: itemPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5633951790362117470}
   - component: {fileID: 2384617141608039363}
   - component: {fileID: 4814279197471335262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: bubble
   m_TagString: bubble
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2881934580317697249}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: itemPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 4841049470900244119}
   - component: {fileID: 6299563643028047791}
   - component: {fileID: 818182607452835317}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

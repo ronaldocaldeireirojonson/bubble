@@ -6,6 +6,13 @@ using Unity.Cinemachine;
 
 public class PlayerSpawner : MonoBehaviour
 {
+
+	[Header("Settings")]
+	public SOPlayerSkins playerSkins;
+
+
+	[Header("References")]
+
 	public GameObject playerPrefab;
 
 	public Dictionary<int, AirConsoleInput> players = new Dictionary<int, AirConsoleInput>();
@@ -71,6 +78,10 @@ public class PlayerSpawner : MonoBehaviour
 		//Instantiate player prefab, store device id + player script in a dictionary
 		GameObject newPlayer = Instantiate(playerPrefab, transform.position, transform.rotation) as GameObject;
 		players.Add(deviceID, newPlayer.GetComponent<AirConsoleInput>());
+
+		int id = deviceID % playerSkins.SkinsCount;
+
+		newPlayer.GetComponent<SkinApplier>().ApplyMaterial(playerSkins.playerSkins[id].material);
 
 		targetGroup.AddMember(newPlayer.transform, radious, width);
 	}
