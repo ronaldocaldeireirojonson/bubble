@@ -6,10 +6,9 @@ public class FmodPlayMenuMusic : MonoBehaviour
 {
     EventInstance coolAudioEventInstance;
 
-    const string coolAudioReferenceString = "event:/Musics/Menu music";
+    const string coolAudioReferenceString = "event:/musics/menu_music";
 
 
-    [ContextMenu("Start")]
     void Start()
     {
 

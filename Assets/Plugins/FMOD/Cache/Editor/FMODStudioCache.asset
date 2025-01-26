@@ -15,36 +15,9 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638734443561509565
+  lastModified: 638734490064156776
   FileSizes: []
   Exists: 1
---- !u!114 &-133304589895495036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musics/Menu music
-  m_EditorClassIdentifier: 
-  Path: event:/Musics/Menu music
-  Guid:
-    Data1: -1353514836
-    Data2: 1091666046
-    Data3: 745988002
-    Data4: -1787431535
-  Banks:
-  - {fileID: -2938009728910094173}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 35000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,42 +34,15 @@ MonoBehaviour:
   - {fileID: 4445262261387624821}
   - {fileID: -2938009728910094173}
   EditorEvents:
-  - {fileID: 1521608540360618196}
-  - {fileID: -133304589895495036}
+  - {fileID: 4636531466608902356}
+  - {fileID: 8863411584090933852}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2938009728910094173}
   StringsBanks:
   - {fileID: 4445262261387624821}
-  cacheTime: 638734443561509565
+  cacheTime: 638734490064161894
   cacheVersion: 131622
---- !u!114 &1521608540360618196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Musics/Gameplay music
-  m_EditorClassIdentifier: 
-  Path: event:/Musics/Gameplay music
-  Guid:
-    Data1: 359519497
-    Data2: 1240140263
-    Data3: 2100308352
-    Data4: 26100368
-  Banks:
-  - {fileID: -2938009728910094173}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &4445262261387624821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +58,62 @@ MonoBehaviour:
   Path: Assets/StreamingAssets/FMOD/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638734443561509565
+  lastModified: 638734490064161894
   FileSizes:
   - Name: 
     Value: 896
   Exists: 1
+--- !u!114 &4636531466608902356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/musics/gameplay_music
+  m_EditorClassIdentifier: 
+  Path: event:/musics/gameplay_music
+  Guid:
+    Data1: 359519497
+    Data2: 1240140263
+    Data3: 2100308352
+    Data4: 26100368
+  Banks:
+  - {fileID: -2938009728910094173}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8863411584090933852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/musics/menu_music
+  m_EditorClassIdentifier: 
+  Path: event:/musics/menu_music
+  Guid:
+    Data1: -1353514836
+    Data2: 1091666046
+    Data3: 745988002
+    Data4: -1787431535
+  Banks:
+  - {fileID: -2938009728910094173}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 34900
