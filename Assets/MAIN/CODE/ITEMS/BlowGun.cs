@@ -9,6 +9,11 @@ public class BlowGun : Item
     float force = 0;
     float percent = 0;
 
+    public AudioClip[] holdClips;
+    public AudioClip[] releaseClips;
+    bool playReleaseClip = false;
+    public AudioSource source;
+
     public override void Setup()
     {
         quad = Object.Instantiate(quadPrefab);
@@ -19,6 +24,13 @@ public class BlowGun : Item
         percent += Time.deltaTime * windUpSpeed;
         force = curve.Evaluate(percent) * maxForce;
         force = Mathf.Min(force, maxForce);
+
+        if(!playReleaseClip)
+        {
+            source.pitch = Random.Range(.95f, 1.05f);
+            source.PlayOneShot(holdClips[Random.Range(0, holdClips.Length)]);
+            playReleaseClip = true;
+        }
 
         quad.transform.rotation = caster.rotation;
         quad.transform.position = caster.position;
@@ -33,6 +45,13 @@ public class BlowGun : Item
 
        // Collider[] hitColliders = Physics.OverlapCapsule(caster.position, caster.position + (caster.forward * force), overlapRadius);
         Collider[] hitColliders = Physics.OverlapSphere(caster.position,  force);
+
+        if(playReleaseClip)
+        {
+            source.pitch = Random.Range(.95f, 1.05f);
+            source.PlayOneShot(releaseClips[Random.Range(0, releaseClips.Length)]);
+            playReleaseClip = false;
+        }
 
         IPushable pushable = null;
 

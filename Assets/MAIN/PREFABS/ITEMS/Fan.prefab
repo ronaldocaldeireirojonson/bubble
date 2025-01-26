@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 171094180029810834}
   - component: {fileID: 5178257168453820448}
   - component: {fileID: 7994191549844324530}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fan
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

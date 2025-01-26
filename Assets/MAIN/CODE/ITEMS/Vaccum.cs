@@ -7,6 +7,11 @@ public class Vaccum : Item
     public float suctionForce = 1;
     public float suctionStopThreashold = 1;
 
+    public AudioClip[] holdClips;
+    public AudioClip[] releaseClips;
+    bool playReleaseClip = false;
+    public AudioSource source;
+
     public override void Hold(Transform caster)
     {
         quad.transform.rotation = caster.rotation;
