@@ -63,7 +63,7 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _LightColor: {r: 0, g: 0.57617044, b: 1, a: 1}
-    - _LightColor_A: {r: 0, g: 0.5764706, b: 1, a: 1}
-    - _LightColor_B: {r: 0.2166667, g: 0, b: 1, a: 1}
+    - _LightColor_A: {r: 1, g: 0, b: 0.4828682, a: 1}
+    - _LightColor_B: {r: 0.9056604, g: 0.31185475, b: 0.71019864, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
