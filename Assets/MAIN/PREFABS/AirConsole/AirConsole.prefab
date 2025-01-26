@@ -50,6 +50,6 @@ MonoBehaviour:
   androidUIResizeMode: 0
   webViewLoadingSprite: {fileID: 0}
   browserStartMode: 0
-  devGameId: com.airconsole.plugin.unity
+  devGameId: com.fuanfuan.fuanfuan
   devLanguage: 
   LocalIpOverride: 
