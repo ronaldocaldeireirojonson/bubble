@@ -18,7 +18,7 @@ public class Bubble : MonoBehaviour, IPushable
     public AudioClip[] impact;
     public AudioSource sound;
     public float impactInterval = .5f;
-    float countDown =0;
+    float countDown = 0;
 
     void Start()
     {
@@ -61,6 +61,8 @@ public class Bubble : MonoBehaviour, IPushable
 
     public void Stop()
     {
+        rb.linearVelocity = Vector3.zero;
+        rb.isKinematic = true;
         targetVelocity = Vector3.zero;
     }
 
@@ -78,6 +80,7 @@ public class Bubble : MonoBehaviour, IPushable
 
     public void Push(Vector3 dir)
     {
+        rb.isKinematic = false;
         AddSpeed(dir);
     }
 

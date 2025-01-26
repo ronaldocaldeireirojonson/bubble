@@ -59,21 +59,21 @@ public class AirConsoleInput : MonoBehaviour, IInput
 
     public void ButtonInput(string input, bool pressed)
     {
+        int direction = pressed? 1 : 0;
         //Debug.LogError(input);
         switch (input)
         {
             case "right":
-                horizontal = pressed? 1:0;
+                horizontal = direction;
                 break;
             case "left":
-                horizontal = pressed ? -1 : 0;
+                horizontal = -direction;
                 break;
-
             case "up":
-                vertical = pressed ? 1 : 0;
+                vertical = direction;
                 break;
             case "down":
-                vertical = pressed ? -1 : 0;
+                vertical = -direction;
                 break;
 
             case "button":

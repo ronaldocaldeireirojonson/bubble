@@ -48,10 +48,10 @@ MonoBehaviour:
   quadPrefab: {fileID: 6930259794033672363, guid: 5f0e549935ff3804ebc4b394b6b4acd8, type: 3}
   quad: {fileID: 0}
   animKey: suck
-  forwardOffset: 5
+  forwardOffset: 8
   arrowVisualMultiplier: 5
   suctionForce: 1
-  suctionStopThreashold: 1
+  suctionStopThreashold: 2
 --- !u!1001 &1673919870304225647
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -38,7 +38,7 @@ public class Vaccum : Item
     {
         quad.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, 1);
+        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, 2);
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)
@@ -49,7 +49,12 @@ public class Vaccum : Item
                 Vector3 direction = (hit.transform.position - caster.position);
 
                 if(direction.magnitude < suctionStopThreashold)
+                {
                     pushable.Stop();
+                }else{
+
+                    pushable.Push(-direction);
+                }
             }
         }
     }
