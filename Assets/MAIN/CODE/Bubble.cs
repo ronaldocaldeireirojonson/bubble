@@ -18,6 +18,7 @@ public class Bubble : MonoBehaviour, IPushable
     public AudioClip[] impact;
     public AudioSource sound;
     public float impactInterval = .5f;
+    public float minForceForSound = 2;
     float countDown = 0;
 
     void Start()
@@ -89,7 +90,7 @@ public class Bubble : MonoBehaviour, IPushable
         vel.y = Mathf.Min(vel.y, 0);
         targetVelocity += vel;
         
-        if(vel.magnitude > 1 && countDown > impactInterval)
+        if(vel.magnitude > minForceForSound && countDown > impactInterval)
         {
             sound.Stop();
             sound.pitch = Random.Range(.95f, 1.05f);
