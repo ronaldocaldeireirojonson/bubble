@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9142572442929884248}
   - component: {fileID: 1867139927944293616}
+  - component: {fileID: 1815412927485135574}
   m_Layer: 7
   m_Name: hat
   m_TagString: item
@@ -226,8 +227,21 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.38, z: 0}
+  m_Size: {x: 1.7820206, y: 1, z: 1}
+  m_Center: {x: -0.39101028, y: 0.38, z: 0}
+--- !u!114 &1815412927485135574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3023958474646409298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c43825528a19b4a8916075408ee0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8429681800127508422, guid: 36398427d24b4a242b9bed9e3d98d2c2, type: 3}
 --- !u!1 &8494787089649966969
 GameObject:
   m_ObjectHideFlags: 0
