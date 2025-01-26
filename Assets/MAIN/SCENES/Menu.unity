@@ -3961,9 +3961,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "DEIVEDE TIBOLA  \xB7  Caio Dias Hanada  \xB7  Jacquelline Angelo  \xB7 
-    KD Oliveira  \xB7  Marcelo Rosa  \xB7  Tales Mariano  \xB7  Rio Ribeiro  \xB7 
-    Ronaldo Jonson   \xB7  Victor Ueti"
+  m_text: "DEIVEDE IBOLA  \xB7  Caio Dias Hanada  \xB7  Eduardo Cucick  \xB7  Gogo
+    Shara   \xB7  Jacquelline Angelo\nLucas Mendon\xE7a  \xB7  KD Oliveira  \xB7 
+    Marcelo Rosa  \xB7  Patty  \xB7  Tales Mariano  \xB7  Rio Ribeiro \nRonaldo Jonson  
+    \xB7  Victor Ueti"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 137d1d0009ab6c343b6ffde26ecf7a78, type: 2}
   m_sharedMaterial: {fileID: -1627195060739637388, guid: 137d1d0009ab6c343b6ffde26ecf7a78, type: 2}
@@ -3990,7 +3991,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.15
+  m_fontSize: 24.95
   m_fontSizeBase: 31.32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5837,3 +5838,5 @@ SceneRoots:
   - {fileID: 473573208}
   - {fileID: 1783869062}
   - {fileID: 2041860521}
+  - {fileID: 733902280}
+  - {fileID: 2017847255}
