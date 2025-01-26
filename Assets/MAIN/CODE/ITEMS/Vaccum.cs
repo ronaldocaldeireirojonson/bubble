@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Vaccum : Item
 {
-
     public float forwardOffset = 5;
     public float arrowVisualMultiplier = 5;
     public float suctionForce = 1;
