@@ -81,7 +81,6 @@ public class Bubble : MonoBehaviour, IPushable
 
     public void Push(Vector3 dir)
     {
-        rb.isKinematic = false;
         AddSpeed(dir);
     }
 
