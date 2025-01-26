@@ -2,36 +2,35 @@ using UnityEngine;
 
 public class BlowGun : Item
 {
-    public float overlapRadius = 1;
-    public float maxForce = 5;
-    public float windUpSpeed = .2f;
-    public AnimationCurve curve;
-    float force = 0;
-    float percent = 0;
+    public GameObject arrow;
 
-    public override void Setup()
-    {
-        quad = Object.Instantiate(quadPrefab);
-    }
+    public Vector3 pointA;
+    public Vector3 pointB;
+    public Material planeMaterial;
+
+    public float forwardOffset = 1;
+    public float overlapRadius = 2;
+    public float maxForce = 5;
+    public float forceModifier = 1;
+    public float arrowVisualMultiplier = 5;
+
+    GameObject plane;
+    float force = 0;
 
     public override void Hold(Transform caster)
     {
-        percent += Time.deltaTime * windUpSpeed;
-        force = curve.Evaluate(percent) * maxForce;
+        force += Time.deltaTime;
         force = Mathf.Min(force, maxForce);
-
-        quad.transform.rotation = caster.rotation;
-        quad.transform.position = caster.position;
-        quad.transform.localScale = new Vector3(1, 1, force);
+        arrow.transform.rotation = caster.rotation;
+        arrow.transform.position = caster.position + caster.forward * force * arrowVisualMultiplier;
     }
 
     public override void Release(Transform caster)
     {
         force = Mathf.Min(force, maxForce);
-        quad.transform.position = new Vector3(9999, 9999, 9999);
+        arrow.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapCapsule(caster.position, caster.position + (caster.forward * force), overlapRadius);
-
+        Collider[] hitColliders = Physics.OverlapSphere(caster.position + caster.forward * forwardOffset, overlapRadius);
         IPushable pushable = null;
 
         foreach (Collider hit in hitColliders)
@@ -39,13 +38,31 @@ public class BlowGun : Item
             pushable = hit.GetComponent<IPushable>();
             if(pushable != null)
             {
-                Vector3 direction = (hit.transform.position - caster.position).normalized;
+                Vector3 direction = (hit.transform.position - caster.position);
                 direction.y = 0;
-                pushable.Push(direction * force);
+                pushable.Push(direction * forceModifier * force);
             }
         }
 
         force = 0;
-        percent = 0;
+    }
+
+    void DrawPlane(Vector3 a, Vector3 b)
+    {
+        Vector3 center = (a + b) / 2f;
+        Vector3 direction = b - a;
+
+        if(plane == null)
+            plane = GameObject.CreatePrimitive(PrimitiveType.Plane);
+
+        plane.transform.position = center;
+
+        float distance = direction.magnitude;
+        plane.transform.localScale = new Vector3(distance / 10f, 1f, 0.1f);
+
+        if (planeMaterial != null)
+        {
+            plane.GetComponent<Renderer>().material = planeMaterial;
+        }
     }
 }

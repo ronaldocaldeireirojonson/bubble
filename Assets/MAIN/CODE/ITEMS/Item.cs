@@ -5,6 +5,7 @@ public class Item : MonoBehaviour
 {
     public GameObject quadPrefab;
     public GameObject quad;
+    public string animKey;
 
     public virtual void Setup()
     {
