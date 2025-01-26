@@ -9,6 +9,11 @@ public class AinConsoleHelper : MonoBehaviour
 
     private void Awake()
     {
+#if AIRCONSOLE
+        usingAirConsole = true;
+#endif
+
+
         foreach (var item in airConsoleObjects)
         {
             item.SetActive(usingAirConsole);
