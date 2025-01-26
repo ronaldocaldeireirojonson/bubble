@@ -95,6 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3744115623808106701}
+  - component: {fileID: 5344606123321219692}
   m_Layer: 7
   m_Name: Vaccum Model
   m_TagString: item
@@ -119,6 +120,25 @@ Transform:
   - {fileID: 9195167495376595207}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5344606123321219692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842195856364916039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdccb485b1a6678479788fea4fa57d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 0}
+  quad: {fileID: 0}
+  quadPrefab: {fileID: 6930259794033672363, guid: 5f0e549935ff3804ebc4b394b6b4acd8, type: 3}
+  forwardOffset: 5
+  arrowVisualMultiplier: 5
+  suctionForce: 1
+  suctionStopThreashold: 1
 --- !u!1 &7493378564890296407
 GameObject:
   m_ObjectHideFlags: 0

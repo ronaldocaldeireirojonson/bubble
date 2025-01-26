@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class BlowGun : Item
 {
-    public GameObject quadPrefab;
     public float overlapRadius = 1;
     public float maxForce = 5;
     public float windUpSpeed = .2f;
     public AnimationCurve curve;
     float force = 0;
     float percent = 0;
-
-    GameObject quad;
 
     public override void Setup()
     {

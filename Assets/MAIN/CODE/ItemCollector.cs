@@ -14,7 +14,13 @@ public class ItemCollector : MonoBehaviour
     {
         if(other.CompareTag("item"))
         {
-            hand.HoldItem(other.GetComponent<Item>());
+            Collectable co = other.GetComponent<Collectable>();
+            if(co != null)
+            {
+                GameObject go = UnityEngine.Object.Instantiate(other.GetComponent<Collectable>().prefab);
+                go.transform.position = Vector3.zero;
+                hand.HoldItem(go.GetComponent<Item>());
+            }
         }
     }
 }
