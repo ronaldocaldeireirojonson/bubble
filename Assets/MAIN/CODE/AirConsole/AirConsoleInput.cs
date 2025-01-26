@@ -55,48 +55,7 @@ public class AirConsoleInput : MonoBehaviour, IInput
         motor.Move(horizontal, vertical);
     }
 
-    public void ButtonInput(string input)
-    {
-        Debug.LogError(input);
-        switch (input)
-        {
-            case "right":
-                horizontal = 1;
-                break;
-            case "left":
-                horizontal = -1;
-                break;
-            case "right-up":
-                horizontal = 0;
-                break;
-            case "left-up":
-                horizontal = 0;
-                break;
 
-            case "up":
-                vertical = 1;
-                break;
-            case "down":
-                vertical = -1;
-                break;
-            case "up-up":
-                vertical = 0;
-                break;
-            case "down-up":
-                vertical = 0;
-                break;
-
-            case "interact":
-                isPressing = true;
-                break;
-
-            case "interact-up":
-                isPressing = false;
-                hand.Release(t);
-                anim.SetBool("suck", false);
-                break;
-        }
-    }
 
     public void ButtonInput(string input, bool pressed)
     {
@@ -128,6 +87,10 @@ public class AirConsoleInput : MonoBehaviour, IInput
                     hand?.Release(t);
                     anim.SetBool("suck", false);
                 }
+                break;
+
+            case "btn_reset":
+                PlayerEvents.onPlayerDeath.Invoke(transform);
                 break;
         }
     }

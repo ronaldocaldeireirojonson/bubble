@@ -102,7 +102,7 @@ public class PlayerSpawner : MonoBehaviour
 		//When I get a message, I check if it's from any of the devices stored in my device Id dictionary
 		if (players.ContainsKey(from))
 		{
-			if (element == "button")
+			if (element == "button" || element == "btn_reset")
 			{
 				players[from].ButtonInput(element, pressed);
 			} else if (element == "dpad" && key!= null)
