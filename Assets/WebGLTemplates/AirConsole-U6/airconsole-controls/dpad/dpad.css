@@ -69,7 +69,7 @@
 }
 
 .dpad-absolute .dpad-arrow-left {
-  background-image: url('dpad-absolute-left.png');
+    background-image: url('dpad-absolute-left.png');
 }
 
 .dpad-absolute .dpad-arrow-right {
