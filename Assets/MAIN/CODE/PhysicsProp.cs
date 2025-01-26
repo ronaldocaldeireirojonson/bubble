@@ -8,9 +8,4 @@ public class PhysicsProp : MonoBehaviour, IPushable
     {
         GetComponent<Rigidbody>().AddForce(dir * force, ForceMode.Force);
     }
-
-    public void Stop()
-    {
-        
-    }
 }
