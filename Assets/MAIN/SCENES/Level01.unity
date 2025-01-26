@@ -12779,8 +12779,6 @@ MonoBehaviour:
   hand:
     emptyHandGraphic: {fileID: 0}
     itemPivot: {fileID: 1478601430}
-    currentItem: {fileID: 0}
-    item: {fileID: 0}
 --- !u!135 &1668121618
 SphereCollider:
   m_ObjectHideFlags: 0
