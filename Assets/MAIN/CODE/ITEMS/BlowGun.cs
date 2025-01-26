@@ -30,7 +30,8 @@ public class BlowGun : Item
         force = Mathf.Min(force, maxForce);
         quad.transform.position = new Vector3(9999, 9999, 9999);
 
-        Collider[] hitColliders = Physics.OverlapCapsule(caster.position, caster.position + (caster.forward * force), overlapRadius);
+       // Collider[] hitColliders = Physics.OverlapCapsule(caster.position, caster.position + (caster.forward * force), overlapRadius);
+        Collider[] hitColliders = Physics.OverlapSphere(caster.position,  force);
 
         IPushable pushable = null;
 
