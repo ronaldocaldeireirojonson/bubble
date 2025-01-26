@@ -10,7 +10,19 @@ public class HatController : MonoBehaviour
         if(currentHat != null)
             Destroy(currentHat);
         
-        Instantiate(hat, hatPivot);
-        currentHat = hat;
+        currentHat = Instantiate(hat, hatPivot);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("item"))
+        {
+            CollectHat hat = other.GetComponent<CollectHat>();
+
+            if(hat != null)
+            {
+                ChangeHat(hat.prefab);
+            }
+        }
     }
 }

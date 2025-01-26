@@ -3,7 +3,14 @@ using System;
 
 public class Item : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject quadPrefab;
+    public GameObject quad;
+    public string animKey;
+
+    public virtual void Setup()
+    {
+
+    }
     
     public virtual void Hold(Transform caster)
     {
