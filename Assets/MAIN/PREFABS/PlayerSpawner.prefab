@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed8815f806a58d946a0ae220eef6b052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSkins: {fileID: 11400000, guid: e2596efbb59aa7f40bd6d50cfdb8e4a3, type: 2}
   playerPrefab: {fileID: 4936856584189944893, guid: 402807d2c0e4b9d4c9b69b1c92427266, type: 3}
   targetGroup: {fileID: 0}
   targetBubble: {fileID: 0}
