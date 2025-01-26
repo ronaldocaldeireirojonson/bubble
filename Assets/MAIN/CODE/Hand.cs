@@ -8,15 +8,19 @@ public class Hand
     public Animator anim;
     public Transform itemPivot;
     
+    [SerializeField]
     GameObject currentItem;
+    [SerializeField]
     Item item;
+
+    GameObject quad;
 
     public void HoldItem(Item newItem)
     {
-        if(currentItem != null)
+        if(item != null)
         {
-            UnityEngine.Object.Destroy(currentItem);
-            currentItem = null;
+            UnityEngine.Object.Destroy(item.gameObject);
+            item = null;
         }
 
         if(newItem == null)
@@ -29,10 +33,18 @@ public class Hand
         }
 
         item = newItem;
-        currentItem = UnityEngine.Object.Instantiate(newItem.prefab, itemPivot);
+        item.transform.SetParent(itemPivot);
+        item.transform.localPosition = Vector3.zero;
+        item.transform.rotation = Quaternion.identity;
+
+        if(quad == null){
+            quad = UnityEngine.Object.Instantiate(item.quadPrefab);
+        }
+
+        item.quad = quad;
 
         if(emptyHandGraphic != null)
-        emptyHandGraphic.SetActive(false);
+            emptyHandGraphic.SetActive(false);
     }
 
     public void Hold(Transform caster)
