@@ -50,7 +50,7 @@ MonoBehaviour:
   quad: {fileID: 0}
   animKey: blow
   overlapRadius: 1
-  maxForce: 5
+  maxForce: 3
   windUpSpeed: 0.75
   curve:
     serializedVersion: 2
