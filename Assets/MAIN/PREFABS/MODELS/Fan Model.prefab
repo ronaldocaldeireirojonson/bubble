@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quadPrefab: {fileID: 6930259794033672363, guid: 5f0e549935ff3804ebc4b394b6b4acd8, type: 3}
   quad: {fileID: 0}
+  animKey: blow
   overlapRadius: 1
   maxForce: 5
   windUpSpeed: 0.7

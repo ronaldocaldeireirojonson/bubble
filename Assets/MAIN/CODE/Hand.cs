@@ -5,6 +5,7 @@ using System;
 public class Hand
 {
     public GameObject emptyHandGraphic;
+    public Animator anim;
     public Transform itemPivot;
     
     [SerializeField]
@@ -54,6 +55,9 @@ public class Hand
             return;
         }
 
+        if(anim != null)
+            anim.SetBool(item.animKey, true);
+
         item.Hold(caster);
     }
 
@@ -64,6 +68,9 @@ public class Hand
             
             return;
         }
+
+        if(anim != null)
+            anim.SetBool(item.animKey, false);
 
         item.Release(caster);
     }

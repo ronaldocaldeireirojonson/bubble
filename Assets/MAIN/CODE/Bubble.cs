@@ -44,7 +44,6 @@ public class Bubble : MonoBehaviour, IPushable
             Vector3 hitPoint = hit.ClosestPoint(t.position);
             Vector3 direction = Vector3.Cross(targetVelocity, hitPoint);
             targetVelocity = Vector3.zero;
-            Debug.DrawLine(hitPoint, hitPoint + direction, Color.red);
             AddSpeed(direction);
         }
     }
