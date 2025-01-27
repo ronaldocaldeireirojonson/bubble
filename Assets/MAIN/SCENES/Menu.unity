@@ -2869,7 +2869,7 @@ PrefabInstance:
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: bdf51c30758a5734196376e129c7c4af, type: 2}
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_fontStyle
       value: 16
@@ -2893,7 +2893,7 @@ PrefabInstance:
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 7418622092965375480, guid: bdf51c30758a5734196376e129c7c4af, type: 2}
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291256598
@@ -5816,7 +5816,7 @@ PrefabInstance:
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: bdf51c30758a5734196376e129c7c4af, type: 2}
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_fontColor.b
       value: 0.78039217
@@ -5836,7 +5836,7 @@ PrefabInstance:
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 7418622092965375480, guid: bdf51c30758a5734196376e129c7c4af, type: 2}
     - target: {fileID: 5295664482243842715, guid: 23b88dc5b3a42534da5e3c3f3e1b0ddc, type: 3}
       propertyPath: m_characterSpacing
       value: 20.23
