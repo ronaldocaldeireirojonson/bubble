@@ -1,4 +1,7 @@
+using NUnit;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Bubble : MonoBehaviour, IPushable
 {   
@@ -11,6 +14,9 @@ public class Bubble : MonoBehaviour, IPushable
     public float deceleration = 2;
     public float overlapRadius = 1;
 
+    public float CollisionDistance = 0.5f;
+    public float CollisionRadius = 0.8f;
+
     public LayerMask ground;
     Transform t;
     Rigidbody rb;
@@ -20,6 +26,8 @@ public class Bubble : MonoBehaviour, IPushable
     public float impactInterval = .5f;
     public float minForceForSound = 2;
     float countDown = 0;
+
+    public Color debugColor = Color.red;
 
     void Start()
     {
@@ -49,14 +57,34 @@ public class Bubble : MonoBehaviour, IPushable
 
     void CheckCollision()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(t.position, overlapRadius, ground);
-        foreach (Collider hit in hitColliders)
+        //Collider[] hitColliders = Physics.OverlapSphere(t.position, overlapRadius, ground);
+        //foreach (Collider hit in hitColliders)
+        //{
+        //    Vector3 hitPoint = hit.ClosestPoint(t.position);
+        //    Vector3 direction = Vector3.Cross(targetVelocity, hitPoint);
+        //    direction = Vector3.Reflect(targetVelocity, (t.position - hitPoint).normalized);
+        //    targetVelocity = Vector3.zero;
+        //    AddSpeed(direction);
+        //}
+
+        RaycastHit hit;
+
+        Vector3 p1 = transform.position;
+        float distanceToObstacle = 0;
+
+        if (Physics.SphereCast(p1, CollisionRadius, targetVelocity.normalized, out hit, CollisionDistance, ground))
         {
-            Vector3 hitPoint = hit.ClosestPoint(t.position);
-            Vector3 direction = Vector3.Cross(targetVelocity, hitPoint);
-            direction = Vector3.Reflect(targetVelocity, (t.position - hitPoint).normalized);
+            distanceToObstacle = hit.distance;
+            
+            // TODO : pior Debug que eu achei, visualizar as linhas seria melhor
+            //print("Hitou no " + hit.transform.gameObject.name);
+            //print("Normal : " + hit.normal);
+
+            Vector3 direction = targetVelocity;
+            direction = Vector3.Reflect(targetVelocity, hit.normal);
             targetVelocity = Vector3.zero;
             AddSpeed(direction);
+
         }
     }
 

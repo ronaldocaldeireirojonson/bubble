@@ -51,7 +51,7 @@ MonoBehaviour:
   animKey: blow
   overlapRadius: 1
   maxForce: 4
-  windUpSpeed: 0.75
+  windUpSpeed: 2
   curve:
     serializedVersion: 2
     m_Curve:

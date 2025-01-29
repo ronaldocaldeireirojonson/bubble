@@ -140,6 +140,8 @@ MonoBehaviour:
   maxVelocity: 4
   deceleration: 1
   overlapRadius: 0.83
+  CollisionDistance: 0.5
+  CollisionRadius: 0.7
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -149,6 +151,7 @@ MonoBehaviour:
   sound: {fileID: 4814279197471335262}
   impactInterval: 0.26
   minForceForSound: 2.35
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &470496329927221483
 MonoBehaviour:
   m_ObjectHideFlags: 0
