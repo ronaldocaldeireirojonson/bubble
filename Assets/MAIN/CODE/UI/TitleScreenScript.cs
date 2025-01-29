@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,7 +17,7 @@ public class TitleScreenController : MonoBehaviour
         // Check for any button press (or mouse click)
         if (Input.anyKeyDown)
         {
-            LoadMainMenu();
+            //LoadMainMenu();
         }
     }
 

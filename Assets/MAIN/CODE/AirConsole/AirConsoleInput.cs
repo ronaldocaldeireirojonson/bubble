@@ -95,6 +95,20 @@ public class AirConsoleInput : MonoBehaviour, IInput
         }
     }
 
+    public void JoystickInput(Vector2 v2, bool pressed)
+    {
+        if (!pressed)
+        {
+            horizontal = 0;
+            vertical = 0;
+        }
+        else
+        {
+            horizontal = v2.x;
+            vertical = v2.y;
+        }
+    }
+
     public void SetStop(bool b)
     {
         isStopped = b;

@@ -20,6 +20,9 @@ public class AirConsoleUIController : MonoBehaviour
 
 	void OnMessage(int from, JToken data)
 	{
+		/*
+		 *  Old
+		 * 
 		if (data["element"] == null || data["data"] == null)
 			return;
 
@@ -43,6 +46,11 @@ public class AirConsoleUIController : MonoBehaviour
 				mainMenuManager.MoveToRight();
 			}
 		}
+		*/
 
+		if (data["fuan"] != null && (bool)data["fuan"]["pressed"])
+		{
+			mainMenuManager.ConfirmButton();
+		}
 	}
 }
