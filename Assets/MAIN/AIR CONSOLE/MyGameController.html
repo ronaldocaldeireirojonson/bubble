@@ -27,9 +27,9 @@
         </div>
         <div id="view-0-section-5" class="section " style="height: 100%;">
             <div id="btn_reset" class="button-300-150 button-element element">
-                <div class="button-text">Reset</div>
+                <div class="button-text" OnClick="OnLoadStuff()">Reset</div>
             </div>
-            <div id="button" class="button-300-150 button-element element">
+            <div id="button" class="button-300-150 button-element element" ontouchstart="OnLoadStuff()">
                 <div class="button-text">F U A N</div>
             </div>
         </div>
@@ -38,6 +38,33 @@
 
     <script type="text/javascript">
         var ctrl_data = '{"orientation":"landscape","selected_view_id":"view-0","views":[{"id":"view-0","sections":[{"id":"view-0-section-3","elements":[{"id":"dpad","key":"dpad_relative","name":"DPad Relative","tmpl":"dpad","constructor_fn":"DPadRelativeElement","options":{"constructor_args":{"diagonal":true},"attr_id":"view-0-section-3-element-0","css_classes":"","view_action":{"target":null,"view_id":null}}}],"classes":[]},{"id":"view-0-section-5","elements":[{"id":"btn_reset","key":"button","name":"Button","tmpl":"button","constructor_fn":"ButtonElement","options":{"constructor_args":{},"attr_id":"btn_reset","css_classes":"button-300-150","view_action":{"target":null,"view_id":null},"label":"Reset","send_onrelease":false,"message_data":[]}},{"id":"button","key":"button","name":"Button","tmpl":"button","constructor_fn":"ButtonElement","options":{"constructor_args":{},"attr_id":"button","css_classes":"button-300-150","view_action":{"target":null,"view_id":null},"label":"F U A N","send_onrelease":true,"message_data":[]}}],"classes":[]}]}]}';
+
+        /*
+        function App() {
+            App.prototype.displayNickname = function () {
+                var name = this.airconsole.getNickname();
+                document.getElementById("content").innerHTML = "My name is: " + name;
+            };
+
+            App.prototype.displayProfilePicture = function () {
+                var picUrl = this.airconsole.getProfilePicture();
+                console.log(picUrl);
+                document.getElementById("profile-pic").style.backgroundImage = "url(" + picUrl + ")";
+            };
+
+            App.prototype.showPlayerNumber = function () {
+                var my_player_number = this.airconsole.convertDeviceIdToPlayerNumber(this.airconsole.getDeviceId());
+                document.getElementById("content").innerHTML = "I am Player # " + my_player_number;
+            };
+
+            //.dpad-relative
+
+            App.prototype.changeDpadImage = function () {
+                var id = (this.airconsole.getDeviceId() % 6)+1;
+                document.getElementById("dpad-relative").style.backgroundImage = "url(extras/dpad-" + id + ".png )";
+            };
+        }*/
+
     </script>
 
 
@@ -56,5 +83,53 @@
     <!-- GENERATOR -->
     <script type="text/javascript" src="controller/js/controller_generator.js"></script>
     <script type="text/javascript" src="controller/js/main.js"></script>
+
+    <script>
+
+        var airconsole;
+        function App() {
+            var me = this;
+            me.airconsole = new AirConsole();
+
+            me.airconsole.onMessage = function (from, data) {
+                console.log("onMessage", from, data);
+                document.getElementById("content").innerHTML = "device " + from + " says: " + data;
+            };
+
+            me.airconsole.onReady = function (code) {
+
+                var id = 2;//(this.airconsole.getDeviceId() % 6) + 1;
+                var elements = document.getElementsByClassName("dpad-relative");
+
+                if (elements.length > 0) {
+                    elements[0].style.backgroundImage = "url('airconsole-controls/dpad/extra/dpad-" + id + ".png')";
+                } else {
+                    console.error("Element with class 'dpad-relative' not found");
+                }
+                console.log("Hello");
+
+
+            };
+        }
+        /*
+        function OnLoadStuff() {
+            var me = this;
+            me.airconsole = new AirConsole();
+
+            var id = (this.airconsole.getDeviceId() % 6) + 1;
+            var elements = document.getElementsByClassName("dpad-relative");
+
+            if (elements.length > 0) {
+                elements[0].style.backgroundImage = "url('airconsole-controls/dpad/extra/dpad-" + id + ".png')";
+            } else {
+                console.error("Element with class 'dpad-relative' not found");
+            }
+            console.log("Hello");
+        }
+
+        document.onload = OnLoadStuff();
+        */
+
+    </script>
 </body>
 </html>
