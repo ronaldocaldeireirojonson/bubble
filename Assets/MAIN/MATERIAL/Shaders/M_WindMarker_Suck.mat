@@ -54,11 +54,11 @@ Material:
     - _Offset: -8
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.92
+    - _Speed: 0.34
     - _Time: -1
-    - _YStrecth: -1.72
+    - _YStrecth: -10.21
     m_Colors:
-    - _MainColor: {r: 0.90588236, g: 0.48235294, b: 0.67266643, a: 0}
-    - _SecondaryColor: {r: 0.78431374, g: 0.23137252, b: 0.6255652, a: 0}
+    - _MainColor: {r: 1.9030454, g: 0.15260272, b: 0.95412046, a: 0}
+    - _SecondaryColor: {r: 0.72300005, g: 0.071577035, b: 0.3749327, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
